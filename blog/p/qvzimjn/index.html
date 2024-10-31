@@ -236,17 +236,34 @@
               <p>エンジニアとして静的サイトだけでは満足ができないことも多いと予想したので、hugoの機能であるショートコードを使いバックエンドに接続できるようにする。</p>
 <p>がりがり書いたのがこれ
 <div id="gennumber">
-    <script>function backend(){
-        if (document.getElementById("gennumber"+"form").value == 85175){document.cookie = "yuki=True; max-age=31536000;path=/";location.href="/";}
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/answer?q='+document.getElementById("gennumber"+"form").value, true);
-        
-        xhr.onload = function () {
-            document.getElementById("gennumber"+"form").value = xhr.responseText;
-        };
-        
-        xhr.send();
-        event.preventDefault();}
+    <script>function backend() {
+    const inputElem = document.getElementById("gennumberform");
+    if (inputElem.value == "85175") {
+        document.cookie = "yuki=True; max-age=31536000; path=/; SameSite=Strict";
+        location.href = "/";
+        return; // リダイレクト後のリクエスト送信を防ぐ
+    }
+    
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '/answer?q=' + encodeURIComponent(inputElem.value), true);
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            inputElem.value = xhr.responseText;
+        } else {
+            console.error("Error:", xhr.statusText);
+            alert("サーバーからの応答が失敗しました。もう一度試してください。");
+        }
+    };
+
+    xhr.onerror = function () {
+        console.error("Network Error");
+        alert("ネットワークエラーが発生しました。接続を確認してください。");
+    };
+
+    xhr.send();
+}
+
     </script>
     <form name="myform" onsubmit="backend()"><input type="text" id="gennumberform"></form>
 </div>
