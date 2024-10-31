@@ -14,7 +14,9 @@ Renderを使用する場合の手順
 5.1 Deploy to renderボタンを押し、Service Group Nameに適当な文字列を入れてapply(事前にrenderのアカウントを作っておく)
 <a href="https://render.com/deploy?repo=https://github.com/mochidukiyukimi/Yuki-Youtube-slim">
 <br><img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
-</a>
+</a><br>
 5.2 vercelでも可能です。
-<a href="https://vercel.com/new/clone?repository-url=https://github.com/ziziidesu/yuki-youtube-blog%/"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
+<a href="https://vercel.com/new/clone?repository-url=https://github.com/ziziidesu/yuki-youtube-blog/">
+<br><img src="https://vercel.com/button" alt="Deploy with Vercel"/>
+</a>
 
