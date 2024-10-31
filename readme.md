@@ -15,7 +15,7 @@ Renderを使用する場合の手順
 <a href="https://render.com/deploy?repo=https://github.com/mochidukiyukimi/Yuki-Youtube-slim">
 <br><img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
 </a><br>
-5.2 vercelでも可能です。
+5.2 vercelでも可能です。(アカウントを作ってください)
 <a href="https://vercel.com/new/clone?repository-url=https://github.com/ziziidesu/yuki-youtube-blog/">
 <br><img src="https://vercel.com/button" alt="Deploy with Vercel"/>
 </a>
